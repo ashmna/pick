@@ -1,0 +1,1005 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "history": 1
+  }
+	}
+		,
+	"history": {
+		"date": {
+		"pretty": "August 7, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "August 6, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "20",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"observations": [
+		{
+		"date": {
+		"pretty": "12:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "8:00 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "20",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"12.0", "dewpti":"53.6","hum":"37","wspdm":"31.5", "wspdi":"19.6","wgustm":"50.0", "wgusti":"31.1","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"27.5", "heatindexi":"81.4","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062000Z 04017G27KT 9999 FEW046 28/12 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "12:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "8:30 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "20",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"12.0", "dewpti":"53.6","hum":"37","wspdm":"22.2", "wspdi":"13.8","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"30","wdire":"NNE","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"27.5", "heatindexi":"81.4","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062030Z 03012KT 9999 FEW046 28/12 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "1:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "01",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "9:00 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "21",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"11.0", "dewpti":"51.8","hum":"35","wspdm":"22.2", "wspdi":"13.8","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062100Z 04012KT 9999 FEW046 28/11 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "1:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "01",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "9:30 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "21",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"11.0", "dewpti":"51.8","hum":"37","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"50","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062130Z 05007KT 9999 FEW046 27/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "2:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "02",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "10:00 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "22",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"11.0", "dewpti":"51.8","hum":"35","wspdm":"20.4", "wspdi":"12.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062200Z 04011KT 9999 FEW046 28/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "2:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "02",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "10:30 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "22",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"11.0", "dewpti":"51.8","hum":"37","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062230Z 04010KT 9999 FEW046 27/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "3:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "03",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "11:00 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "23",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"11.0", "dewpti":"51.8","hum":"37","wspdm":"24.1", "wspdi":"15.0","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062300Z 04013KT 9999 FEW046 27/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "3:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "03",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "11:30 PM GMT on August 06, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "06",
+		"hour": "23",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"10.0", "dewpti":"50.0","hum":"34","wspdm":"24.1", "wspdi":"15.0","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 062330Z 04013KT 9999 NSC 27/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "4:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "04",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "12:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"26.0", "tempi":"78.8","dewptm":"10.0", "dewpti":"50.0","hum":"36","wspdm":"27.8", "wspdi":"17.3","wgustm":"48.2", "wgusti":"29.9","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070000Z 04015G26KT 9999 NSC 26/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "4:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "04",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "12:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"26.0", "tempi":"78.8","dewptm":"10.0", "dewpti":"50.0","hum":"36","wspdm":"25.9", "wspdi":"16.1","wgustm":"48.2", "wgusti":"29.9","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070030Z 04014G26KT 9999 NSC 26/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "5:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "05",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "1:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "01",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"26.0", "tempi":"78.8","dewptm":"10.0", "dewpti":"50.0","hum":"36","wspdm":"20.4", "wspdi":"12.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"50","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070100Z 05011KT 9999 NSC 26/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "5:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "05",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "1:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "01",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"25.0", "tempi":"77.0","dewptm":"11.0", "dewpti":"51.8","hum":"41","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"70","wdire":"ENE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070130Z 07008KT 9999 NSC 25/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "6:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "06",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "2:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "02",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"25.0", "tempi":"77.0","dewptm":"11.0", "dewpti":"51.8","hum":"41","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"60","wdire":"ENE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070200Z 06008KT 9999 NSC 25/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "6:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "06",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "2:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "02",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"25.0", "tempi":"77.0","dewptm":"11.0", "dewpti":"51.8","hum":"41","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"60","wdire":"ENE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070230Z 06008KT 9999 NSC 25/11 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "7:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "07",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "3:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "03",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"25.0", "tempi":"77.0","dewptm":"12.0", "dewpti":"53.6","hum":"44","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"50","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070300Z 05008KT 9999 NSC 25/12 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "7:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "07",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "3:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "03",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"26.0", "tempi":"78.8","dewptm":"11.0", "dewpti":"51.8","hum":"39","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"60","wdire":"ENE","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070330Z 06008KT 9999 NSC 26/11 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "8:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "08",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "4:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "04",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"11.0", "dewpti":"51.8","hum":"37","wspdm":"11.1", "wspdi":"6.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"80","wdire":"East","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070400Z 08006KT 9999 NSC 27/11 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "8:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "08",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "4:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "04",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"11.0", "dewpti":"51.8","hum":"35","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"70","wdire":"ENE","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070430Z 07007KT 9999 NSC 28/11 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "9:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "09",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "5:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "05",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"14.0", "dewpti":"57.2","hum":"45","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"150","wdire":"SSE","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"27.1", "heatindexi":"80.8","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070500Z 15007KT 080V200 9999 NSC 27/14 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "9:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "09",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "5:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "05",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"13.0", "dewpti":"55.4","hum":"39","wspdm":"7.4", "wspdi":"4.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"27.6", "heatindexi":"81.7","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070530Z 19004KT 160V230 9999 NSC 28/13 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "10:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "10",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "6:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "06",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"29.0", "tempi":"84.2","dewptm":"12.0", "dewpti":"53.6","hum":"35","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"28.2", "heatindexi":"82.8","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070600Z 19003KT 120V240 9999 NSC 29/12 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "10:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "10",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "6:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "06",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"30.0", "tempi":"86.0","dewptm":"12.0", "dewpti":"53.6","hum":"33","wspdm":"3.7", "wspdi":"2.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1011", "pressurei":"29.86","windchillm":"-999", "windchilli":"-999","heatindexm":"29.0", "heatindexi":"84.2","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070630Z VRB02KT 9999 NSC 30/12 Q1011 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "11:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "11",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "7:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "07",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"30.0", "tempi":"86.0","dewptm":"12.0", "dewpti":"53.6","hum":"33","wspdm":"3.7", "wspdi":"2.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"29.0", "heatindexi":"84.2","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070700Z VRB02KT 9999 NSC 30/12 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "11:30 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "11",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "7:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "07",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"32.0", "tempi":"89.6","dewptm":"12.0", "dewpti":"53.6","hum":"29","wspdm":"3.7", "wspdi":"2.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"30.7", "heatindexi":"87.3","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070730Z VRB02KT 9999 NSC 32/12 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "12:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "12",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "8:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "08",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"32.0", "tempi":"89.6","dewptm":"12.0", "dewpti":"53.6","hum":"29","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"30.7", "heatindexi":"87.3","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070800Z 19003KT 160V240 9999 NSC 32/12 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "12:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "12",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "8:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "08",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"33.0", "tempi":"91.4","dewptm":"12.0", "dewpti":"53.6","hum":"28","wspdm":"7.4", "wspdi":"4.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"210","wdire":"SSW","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"31.7", "heatindexi":"89.1","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070830Z 21004KT 130V280 9999 NSC 33/12 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "1:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "13",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "9:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "09",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"33.0", "tempi":"91.4","dewptm":"12.0", "dewpti":"53.6","hum":"28","wspdm":"7.4", "wspdi":"4.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"31.7", "heatindexi":"89.1","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070900Z 19004KT 160V230 9999 NSC 33/12 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "1:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "13",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "9:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "09",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"34.0", "tempi":"93.2","dewptm":"11.0", "dewpti":"51.8","hum":"24","wspdm":"3.6", "wspdi":"2.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1008", "pressurei":"29.77","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 070930Z VRB01MPS 9999 NSC 34/11 Q1008 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "2:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "14",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "10:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "10",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"35.0", "tempi":"95.0","dewptm":"11.0", "dewpti":"51.8","hum":"23","wspdm":"10.8", "wspdi":"6.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"200","wdire":"SSW","vism":"10.0", "visi":"6.2","pressurem":"1008", "pressurei":"29.77","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071000Z 20003MPS 160V260 9999 NSC 35/11 Q1008 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "2:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "14",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "10:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "10",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"35.0", "tempi":"95.0","dewptm":"10.0", "dewpti":"50.0","hum":"22","wspdm":"7.2", "wspdi":"4.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"10.0", "visi":"6.2","pressurem":"1008", "pressurei":"29.77","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071030Z 19002MPS 140V240 9999 NSC 35/10 Q1008 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "3:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "15",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "11:00 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "11",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"36.0", "tempi":"96.8","dewptm":"11.0", "dewpti":"51.8","hum":"22","wspdm":"7.2", "wspdi":"4.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1007", "pressurei":"29.74","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071100Z VRB02MPS 9999 NSC 36/11 Q1007 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "3:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "15",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "11:30 AM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "11",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"36.0", "tempi":"96.8","dewptm":"11.0", "dewpti":"51.8","hum":"22","wspdm":"16.7", "wspdi":"10.4","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"50","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1007", "pressurei":"29.74","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071130Z 05009KT 9999 NSC 36/11 Q1007 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "4:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "16",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "12:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "12",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"36.0", "tempi":"96.8","dewptm":"10.0", "dewpti":"50.0","hum":"20","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"50","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1007", "pressurei":"29.74","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071200Z 05010KT 9999 NSC 36/10 Q1007 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "4:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "16",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "12:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "12",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"34.0", "tempi":"93.2","dewptm":"12.0", "dewpti":"53.6","hum":"26","wspdm":"25.9", "wspdi":"16.1","wgustm":"48.2", "wgusti":"29.9","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"32.7", "heatindexi":"90.8","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071230Z 04014G26KT 9999 NSC 34/12 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "5:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "17",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "1:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "13",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"33.0", "tempi":"91.4","dewptm":"12.0", "dewpti":"53.6","hum":"28","wspdm":"27.8", "wspdi":"17.3","wgustm":"48.2", "wgusti":"29.9","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"31.7", "heatindexi":"89.1","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071300Z 04015G26KT 9999 NSC 33/12 Q1006 R09/000070 TEMPO 04026G36KT" },
+		{
+		"date": {
+		"pretty": "5:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "17",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "1:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "13",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"32.0", "tempi":"89.6","dewptm":"12.0", "dewpti":"53.6","hum":"29","wspdm":"33.3", "wspdi":"20.7","wgustm":"63.0", "wgusti":"39.1","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"30.7", "heatindexi":"87.3","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071330Z 04018G34KT 9999 NSC 32/12 Q1006 R09/000070 TEMPO 04026G36KT" },
+		{
+		"date": {
+		"pretty": "6:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "18",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "2:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "14",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"31.0", "tempi":"87.8","dewptm":"12.0", "dewpti":"53.6","hum":"31","wspdm":"37.0", "wspdi":"23.0","wgustm":"64.8", "wgusti":"40.3","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"29.8", "heatindexi":"85.7","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071400Z 04020G35KT 9999 NSC 31/12 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "6:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "18",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "2:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "14",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"30.0", "tempi":"86.0","dewptm":"11.0", "dewpti":"51.8","hum":"31","wspdm":"35.2", "wspdi":"21.9","wgustm":"61.1", "wgusti":"38.0","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071430Z 04019G33KT 9999 NSC 30/11 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "7:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "19",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "3:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "15",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"30.0", "tempi":"86.0","dewptm":"11.0", "dewpti":"51.8","hum":"31","wspdm":"38.9", "wspdi":"24.2","wgustm":"68.5", "wgusti":"42.6","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071500Z 04021G37KT 9999 FEW040CB 30/11 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "7:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "19",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "3:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "15",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"29.0", "tempi":"84.2","dewptm":"11.0", "dewpti":"51.8","hum":"33","wspdm":"38.9", "wspdi":"24.2","wgustm":"68.5", "wgusti":"42.6","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071530Z 04021G37KT 9999 FEW040CB 29/11 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "8:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "20",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "4:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "16",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"29.0", "tempi":"84.2","dewptm":"10.0", "dewpti":"50.0","hum":"30","wspdm":"38.9", "wspdi":"24.2","wgustm":"68.5", "wgusti":"42.6","wdird":"40","wdire":"NE","vism":"10.0", "visi":"6.2","pressurem":"1006", "pressurei":"29.71","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071600Z 04021G37KT 9999 FEW040CB 29/10 Q1006 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "8:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "20",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "4:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "16",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"9.0", "dewpti":"48.2","hum":"30","wspdm":"35.2", "wspdi":"21.9","wgustm":"72.2", "wgusti":"44.9","wdird":"30","wdire":"NNE","vism":"10.0", "visi":"6.2","pressurem":"1007", "pressurei":"29.74","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071630Z 03019G39KT 9999 FEW040CB 28/09 Q1007 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "9:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "21",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "5:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "17",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"9.0", "dewpti":"48.2","hum":"30","wspdm":"29.6", "wspdi":"18.4","wgustm":"53.7", "wgusti":"33.4","wdird":"10","wdire":"North","vism":"10.0", "visi":"6.2","pressurem":"1008", "pressurei":"29.77","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071700Z 01016G29KT 9999 FEW040CB 28/09 Q1008 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "9:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "21",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "5:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "17",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"8.0", "dewpti":"46.4","hum":"28","wspdm":"29.6", "wspdi":"18.4","wgustm":"55.6", "wgusti":"34.5","wdird":"10","wdire":"North","vism":"10.0", "visi":"6.2","pressurem":"1008", "pressurei":"29.77","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071730Z 01016G30KT 9999 FEW040CB 28/08 Q1008 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "10:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "22",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "6:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "18",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"9.0", "dewpti":"48.2","hum":"30","wspdm":"24.1", "wspdi":"15.0","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"360","wdire":"North","vism":"10.0", "visi":"6.2","pressurem":"1009", "pressurei":"29.80","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071800Z 36013KT 9999 FEW040CB 28/09 Q1009 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "10:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "22",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "6:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "18",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"28.0", "tempi":"82.4","dewptm":"10.0", "dewpti":"50.0","hum":"32","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"340","wdire":"NNW","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071830Z 34008KT 9999 FEW040CB 28/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "11:00 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "23",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "7:00 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "19",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"27.0", "tempi":"80.6","dewptm":"10.0", "dewpti":"50.0","hum":"34","wspdm":"3.7", "wspdi":"2.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"320","wdire":"NW","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071900Z 32002KT 9999 NSC 27/10 Q1010 R09/000070 NOSIG" },
+		{
+		"date": {
+		"pretty": "11:30 PM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "23",
+		"min": "30",
+		"tzname": "Asia/Yerevan"
+		},
+		"utcdate": {
+		"pretty": "7:30 PM GMT on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "19",
+		"min": "30",
+		"tzname": "UTC"
+		},
+		"tempm":"26.0", "tempi":"78.8","dewptm":"8.0", "dewpti":"46.4","hum":"32","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"0","wdire":"Variable","vism":"10.0", "visi":"6.2","pressurem":"1010", "pressurei":"29.83","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR UDYZ 071930Z VRB03KT 9999 NSC 26/08 Q1010 R09/000070 NOSIG" }
+		],
+		"dailysummary": [
+		{ "date": {
+		"pretty": "12:00 AM +04 on August 07, 2016",
+		"year": "2016",
+		"mon": "08",
+		"mday": "07",
+		"hour": "00",
+		"min": "00",
+		"tzname": "Asia/Yerevan"
+		},
+		"fog":"0","rain":"0","snow":"0","snowfallm":"", "snowfalli":"","monthtodatesnowfallm":"", "monthtodatesnowfalli":"","since1julsnowfallm":"", "since1julsnowfalli":"","snowdepthm":"", "snowdepthi":"","hail":"0","thunder":"0","tornado":"0","meantempm":"30", "meantempi":"86","meandewptm":"11", "meandewpti":"52","meanpressurem":"1008.90", "meanpressurei":"29.80","meanwindspdm":"18", "meanwindspdi":"11","meanwdire":"NE","meanwdird":"48","meanvism":"10.0", "meanvisi":"6.2","humidity":"33","maxtempm":"36", "maxtempi":"96","mintempm":"25", "mintempi":"77","maxhumidity":"45","minhumidity":"20","maxdewptm":"14", "maxdewpti":"57","mindewptm":"8", "mindewpti":"46","maxpressurem":"1011", "maxpressurei":"29.86","minpressurem":"1006", "minpressurei":"29.71","maxwspdm":"39", "maxwspdi":"24","minwspdm":"4", "minwspdi":"2","maxvism":"10.0", "maxvisi":"6.2","minvism":"10.0", "minvisi":"6.2","gdegreedays":"36","heatingdegreedays":"0","coolingdegreedays":"22","precipm":"0.0", "precipi":"0.00","precipsource":"3Or6HourObs","heatingdegreedaysnormal":"","monthtodateheatingdegreedays":"","monthtodateheatingdegreedaysnormal":"","since1sepheatingdegreedays":"","since1sepheatingdegreedaysnormal":"","since1julheatingdegreedays":"","since1julheatingdegreedaysnormal":"","coolingdegreedaysnormal":"","monthtodatecoolingdegreedays":"","monthtodatecoolingdegreedaysnormal":"","since1sepcoolingdegreedays":"","since1sepcoolingdegreedaysnormal":"","since1jancoolingdegreedays":"","since1jancoolingdegreedaysnormal":"" }
+		]
+	}
+}
