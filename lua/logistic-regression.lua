@@ -18,14 +18,21 @@ logger = optim.Logger('loss_log.txt')
 ----------------------------------------------------------------------
 -- 2. Define the model (predictor)
 
-softMaxLayer = nn.LogSoftMax()
 
+
+dataset = getDataset(132)
+print(#dataset)
+local inputCount = (#dataset[1][1])[1]
+local outputCount = (#dataset[1][2])[1]
+
+
+--softMaxLayer = nn.LogSoftMax()
 model = nn.Sequential()
-model:add(nn.Linear(67,140))
-model:add(nn.Linear(140,7000))
-model:add(softMaxLayer)
+model:add(nn.Linear(inputCount, inputCount*2))
+model:add(nn.Linear(inputCount*2, outputCount))
+--model:add(softMaxLayer)
 
-dataset = {}
+print(model)
 ----------------------------------------------------------------------
 -- 3. Define a loss function, to be minimized.
 
@@ -45,10 +52,11 @@ feval = function(x_new)
     end
 
     -- select a new training sample
-    _nidx_ = (_nidx_ or 1) + 1
-    if _nidx_ > #dataset then _nidx_ = 2 end
+    _nidx_ = _nidx_ or 1
+    if _nidx_ > #dataset then _nidx_ = 1 end
 
-    local inputs, target = genInputsAndOutputs(dataset[_nidx_])
+    local inputs = dataset[_nidx_][1]
+    local target = dataset[_nidx_][2]
     -- reset gradients (gradients are always accumulated, to accomodate
     -- batch methods)
     -- print(_nidx_, (#inputs)[1], (#target)[1])
@@ -90,44 +98,39 @@ print('============================================================')
 print('Training with SGD')
 print('')
 
-for epoch = 1, 100 do
-    for file in io.popen([[ls "../dataset_per_object" ]]):lines() do
-        dataset = csvigo.load({path = "../dataset_per_object/" .. file, mode = "large"})
-        print(file)
-        print('')
+for epoch = 1, 30 do
 
-        current_loss = 0
+    current_loss = 0
 
-        for i = 2, #dataset do
+    for i = 1, #dataset do
 
-            -- optim contains several optimization algorithms.
-            -- All of these algorithms assume the same parameters:
-            --   + a closure that computes the loss, and its gradient wrt to x,
-            --     given a point x
-            --   + a point x
-            --   + some parameters, which are algorithm-specific
+        -- optim contains several optimization algorithms.
+        -- All of these algorithms assume the same parameters:
+        --   + a closure that computes the loss, and its gradient wrt to x,
+        --     given a point x
+        --   + a point x
+        --   + some parameters, which are algorithm-specific
 
-            _,fs = optim.sgd(feval, x, sgd_params)
+        _,fs = optim.sgd(feval, x, sgd_params)
 
-            -- Functions in optim all return two things:
-            --   + the new x, found by the optimization method (here SGD)
-            --   + the value of the loss functions at all points that were used by
-            --     the algorithm. SGD only estimates the function once, so
-            --     that list just contains one value.
+        -- Functions in optim all return two things:
+        --   + the new x, found by the optimization method (here SGD)
+        --   + the value of the loss functions at all points that were used by
+        --     the algorithm. SGD only estimates the function once, so
+        --     that list just contains one value.
 
-            current_loss = current_loss + fs[1]
+        current_loss = current_loss + fs[1]
 
-            -- print('item = ' .. i .. ' current loss = ' .. current_loss)
-        end
-
-        -- report average error on epoch
-        current_loss = current_loss / #dataset
-
-        print('epoch ='.. epoch .. ' - ' .. file .. ' current loss = ' .. current_loss)
-
-        logger:add{['training error'] = current_loss}
-        logger:style{['training error'] = '-'}
-        logger:plot()
-
+        -- print('item = ' .. i .. ' current loss = ' .. current_loss)
     end
+
+    -- report average error on epoch
+    current_loss = current_loss / #dataset
+
+    print('epoch = '.. epoch .. ' - current loss = ' .. current_loss)
+
+    logger:add{['training error'] = current_loss}
+    logger:style{['training error'] = '-'}
+    logger:plot()
+
 end
