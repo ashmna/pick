@@ -1,2 +1,4 @@
 .idea
-node_modules
+node_modules/*
+resources/dataset/*
+resources/dataset_per_object/*

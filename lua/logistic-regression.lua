@@ -12,7 +12,8 @@ require './utils.lua'
 -- - age: age of the person; no quote characters
 
 -- Reading CSV files can be tricky. This code uses the csvigo package for this:
-loaded = csvigo.load('example-logistic-regression.csv')
+logger = optim.Logger('loss_log.txt')
+
 
 ----------------------------------------------------------------------
 -- 2. Define the model (predictor)
@@ -20,15 +21,15 @@ loaded = csvigo.load('example-logistic-regression.csv')
 softMaxLayer = nn.LogSoftMax()
 
 model = nn.Sequential()
-model:add(nn.Linear(470,980))
-model:add(nn.Linear(980,7000))
+model:add(nn.Linear(67,140))
+model:add(nn.Linear(140,7000))
 model:add(softMaxLayer)
 
 dataset = {}
 ----------------------------------------------------------------------
 -- 3. Define a loss function, to be minimized.
 
-criterion = nn.ClassNLLCriterion()
+criterion = nn.MSECriterion()
 
 ----------------------------------------------------------------------
 -- 4.a. Train the model (Using SGD)
@@ -50,7 +51,7 @@ feval = function(x_new)
     local inputs, target = genInputsAndOutputs(dataset[_nidx_])
     -- reset gradients (gradients are always accumulated, to accomodate
     -- batch methods)
-    print((#inputs)[1], (#target)[1])
+    -- print(_nidx_, (#inputs)[1], (#target)[1])
     dl_dx:zero()
 
     -- evaluate the loss function and its derivative wrt x, for that sample
@@ -70,8 +71,8 @@ end
 --   + a learning rate decay, to let the algorithm converge more precisely
 
 sgd_params = {
-    learningRate = 1e-3,
-    learningRateDecay = 1e-4,
+    learningRate = 0.5,
+    learningRateDecay = 0.5,
     weightDecay = 0,
     momentum = 0
 }
@@ -89,37 +90,44 @@ print('============================================================')
 print('Training with SGD')
 print('')
 
-for file in io.popen([[ls "../dataset_per_object" ]]):lines() do
-    dataset = csvigo.load({path = "../dataset_per_object/" .. file, mode = "large"})
-    print(file)
-    print('')
+for epoch = 1, 100 do
+    for file in io.popen([[ls "../dataset_per_object" ]]):lines() do
+        dataset = csvigo.load({path = "../dataset_per_object/" .. file, mode = "large"})
+        print(file)
+        print('')
 
-    current_loss = 0
+        current_loss = 0
 
-    for i = 2, #dataset do
+        for i = 2, #dataset do
 
-        -- optim contains several optimization algorithms.
-        -- All of these algorithms assume the same parameters:
-        --   + a closure that computes the loss, and its gradient wrt to x,
-        --     given a point x
-        --   + a point x
-        --   + some parameters, which are algorithm-specific
+            -- optim contains several optimization algorithms.
+            -- All of these algorithms assume the same parameters:
+            --   + a closure that computes the loss, and its gradient wrt to x,
+            --     given a point x
+            --   + a point x
+            --   + some parameters, which are algorithm-specific
 
-        _, fs = optim.sgd(feval, x, sgd_params)
+            _,fs = optim.sgd(feval, x, sgd_params)
 
-        -- Functions in optim all return two things:
-        --   + the new x, found by the optimization method (here SGD)
-        --   + the value of the loss functions at all points that were used by
-        --     the algorithm. SGD only estimates the function once, so
-        --     that list just contains one value.
+            -- Functions in optim all return two things:
+            --   + the new x, found by the optimization method (here SGD)
+            --   + the value of the loss functions at all points that were used by
+            --     the algorithm. SGD only estimates the function once, so
+            --     that list just contains one value.
 
-        current_loss = current_loss + fs[1]
+            current_loss = current_loss + fs[1]
 
-        print('item = ' .. i .. ' current loss = ' .. current_loss)
+            -- print('item = ' .. i .. ' current loss = ' .. current_loss)
+        end
+
+        -- report average error on epoch
+        current_loss = current_loss / #dataset
+
+        print('epoch ='.. epoch .. ' - ' .. file .. ' current loss = ' .. current_loss)
+
+        logger:add{['training error'] = current_loss}
+        logger:style{['training error'] = '-'}
+        logger:plot()
+
     end
-
-    -- report average error on epoch
-    current_loss = current_loss / #dataset_inputs
-
-    print('epoch = ' .. file .. ' current loss = ' .. current_loss)
 end
