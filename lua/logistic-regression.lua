@@ -20,16 +20,48 @@ logger = optim.Logger('loss_log.txt')
 
 
 
-dataset = getDataset(132)
-print(#dataset)
-local inputCount = (#dataset[1][1])[1]
-local outputCount = (#dataset[1][2])[1]
+local allDataset = getDataset(132)
 
+local inputCount = (#allDataset[1][1])[1]
+local outputCount = (#allDataset[1][2])[1]
+
+local dataset0 = {};
+local dataset1 = {};
+local dataset = {};
+local testDataset = {};
+
+
+math.randomseed(os.time())
+
+for i=1, #allDataset do
+    if math.random() <= 0.05 then
+        testDataset[#testDataset + 1] = allDataset[i]
+    else
+        dataset[#dataset + 1] = allDataset[i]
+        if torch.max(allDataset[i][2]) == 1 then
+            dataset1[#dataset1 + 1] = allDataset[i]
+        end
+    end
+
+end
+dataset0 = dataset;
+
+
+print('=====================================')
+print('dataset', #dataset)
+print('testDataset', #testDataset)
+print('')
 
 --softMaxLayer = nn.LogSoftMax()
 model = nn.Sequential()
+model:add(nn.Linear(inputCount, inputCount))
+model:add(nn.Linear(inputCount, inputCount))
+model:add(nn.Linear(inputCount, inputCount))
+model:add(nn.Linear(inputCount, inputCount))
+model:add(nn.Linear(inputCount, inputCount))
 model:add(nn.Linear(inputCount, inputCount*2))
 model:add(nn.Linear(inputCount*2, outputCount))
+
 --model:add(softMaxLayer)
 
 print(model)
@@ -42,6 +74,7 @@ criterion = nn.MSECriterion()
 -- 4.a. Train the model (Using SGD)
 
 x, dl_dx = model:getParameters()
+_nidx_ = 1
 
 feval = function(x_new)
     -- set x to x_new, if differnt
@@ -98,39 +131,71 @@ print('============================================================')
 print('Training with SGD')
 print('')
 
-for epoch = 1, 30 do
+function train(count)
 
-    current_loss = 0
+    for epoch = 1, count do
 
-    for i = 1, #dataset do
+        local current_loss = 0
 
-        -- optim contains several optimization algorithms.
-        -- All of these algorithms assume the same parameters:
-        --   + a closure that computes the loss, and its gradient wrt to x,
-        --     given a point x
-        --   + a point x
-        --   + some parameters, which are algorithm-specific
+        for i = 1, #dataset do
 
-        _,fs = optim.sgd(feval, x, sgd_params)
+            -- optim contains several optimization algorithms.
+            -- All of these algorithms assume the same parameters:
+            --   + a closure that computes the loss, and its gradient wrt to x,
+            --     given a point x
+            --   + a point x
+            --   + some parameters, which are algorithm-specific
 
-        -- Functions in optim all return two things:
-        --   + the new x, found by the optimization method (here SGD)
-        --   + the value of the loss functions at all points that were used by
-        --     the algorithm. SGD only estimates the function once, so
-        --     that list just contains one value.
+            local _,fs = optim.sgd(feval, x, sgd_params)
 
-        current_loss = current_loss + fs[1]
+            -- Functions in optim all return two things:
+            --   + the new x, found by the optimization method (here SGD)
+            --   + the value of the loss functions at all points that were used by
+            --     the algorithm. SGD only estimates the function once, so
+            --     that list just contains one value.
 
-        -- print('item = ' .. i .. ' current loss = ' .. current_loss)
+            current_loss = current_loss + fs[1]
+
+            -- print('item = ' .. i .. ' current loss = ' .. current_loss)
+        end
+
+        -- report average error on epoch
+        current_loss = current_loss / #dataset
+
+        print('epoch = '.. epoch .. ' - current loss = ' .. current_loss)
+
+        logger:add{['training error'] = current_loss}
+        logger:style{['training error'] = '-'}
+        logger:plot()
+
     end
+end
 
-    -- report average error on epoch
-    current_loss = current_loss / #dataset
+dataset = dataset0;
+train(10)
+dataset = dataset1;
+train(10)
+dataset = dataset0;
+train(3)
+dataset = dataset1;
+train(10)
 
-    print('epoch = '.. epoch .. ' - current loss = ' .. current_loss)
+for i=1, 50 do
+    dataset = dataset0;
+    train(1)
+    dataset = dataset1;
+    train(100)
+end
 
-    logger:add{['training error'] = current_loss}
-    logger:style{['training error'] = '-'}
-    logger:plot()
 
+
+for i = 1, #testDataset do
+    local inputs = testDataset[i][1]
+    local target = testDataset[i][2]
+
+    local output = model:forward(inputs);
+    print('=======================')
+    print(target)
+    print(output)
+    print('')
 end
