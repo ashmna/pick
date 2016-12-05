@@ -36,13 +36,11 @@ math.randomseed(os.time())
 for i=1, #allDataset do
     if math.random() <= 0.05 then
         testDataset[#testDataset + 1] = allDataset[i]
-    else
-        dataset[#dataset + 1] = allDataset[i]
-        if torch.max(allDataset[i][2]) == 1 then
-            dataset1[#dataset1 + 1] = allDataset[i]
-        end
     end
-
+    dataset[#dataset + 1] = allDataset[i]
+    if torch.max(allDataset[i][2]) == 1 then
+        dataset1[#dataset1 + 1] = allDataset[i]
+    end
 end
 dataset0 = dataset;
 
@@ -54,13 +52,10 @@ print('')
 
 --softMaxLayer = nn.LogSoftMax()
 model = nn.Sequential()
-model:add(nn.Linear(inputCount, inputCount))
-model:add(nn.Linear(inputCount, inputCount))
-model:add(nn.Linear(inputCount, inputCount))
-model:add(nn.Linear(inputCount, inputCount))
-model:add(nn.Linear(inputCount, inputCount))
 model:add(nn.Linear(inputCount, inputCount*2))
 model:add(nn.Linear(inputCount*2, outputCount))
+model:add(nn.ReLU())
+
 
 --model:add(softMaxLayer)
 
@@ -112,8 +107,8 @@ end
 --   + a learning rate decay, to let the algorithm converge more precisely
 
 sgd_params = {
-    learningRate = 0.5,
-    learningRateDecay = 0.5,
+    learningRate = 1e-3,
+    learningRateDecay = 1e-4,
     weightDecay = 0,
     momentum = 0
 }
@@ -172,21 +167,12 @@ function train(count)
 end
 
 dataset = dataset0;
-train(10)
+train(5)
 dataset = dataset1;
-train(10)
-dataset = dataset0;
-train(3)
-dataset = dataset1;
-train(10)
-
-for i=1, 50 do
-    dataset = dataset0;
-    train(1)
-    dataset = dataset1;
-    train(100)
+for i=1, 4 do
+    train(300)
+    torch.save('../resources/lua/132/model-2.th', dataset)
 end
-
 
 
 for i = 1, #testDataset do
