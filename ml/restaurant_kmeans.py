@@ -1,9 +1,7 @@
-import pandas
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
+import pandas
 from sklearn.cluster import KMeans
-from sklearn.datasets import make_blobs
 
 data = pandas.read_csv('../resources/menu/timestamp_Wday.csv')
 
@@ -25,13 +23,22 @@ newData['InRestaurant'] = bData.InRestaurant
 
 X = newData.as_matrix()
 
-y_pred = KMeans(n_clusters=3).fit_predict(X)
+
+kMeans = KMeans(n_clusters=3)
+kMeans.fit(X)
+
+y_pred = kMeans.predict(X)
 
 
-plt.figure(1)
-plt.clf()
 
-plt.scatter(X[:, 0], X[:, 1], c=y_pred)
-plt.title("Unevenly Sized Blobs")
+from sklearn.externals import joblib
+joblib.dump(kMeans, 'model/3-means.pkl')
 
-plt.show()
+# plt.figure(1)
+# plt.clf()
+#
+# plt.scatter(X[:, 0], X[:, 1], c=y_pred)
+# plt.title("Unevenly Sized Blobs")
+#
+# plt.show()
+#
