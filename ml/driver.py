@@ -12,14 +12,11 @@ all_data = all_data[all_data['InRestaurant'] > 0]
 all_data = all_data[all_data['InRestaurant'] <= 3600]
 
 all_data['time'] = all_data['TimeArrive'] - all_data['TransDate']
-delta = 9.5*60*60
-def ss(time):
-    if time < delta:
-        return time + 24 * 60 * 60 - delta
-    return time - delta
 
-all_data['time'] = all_data['time'].map(ss)
+data1 = all_data[all_data['time'] < 12*60*60]
+data1['time'] = data1['time'] + 24*60*60
 
+all_data = pandas.concat([all_data, data1])
 
 def show_data(w_data):
     x = w_data['time'].as_matrix()
@@ -28,9 +25,9 @@ def show_data(w_data):
     ir = IsotonicRegression()
     ir.fit(x, y)
 
-    bx = range(0, 24 * 60 * 60)
+    bx = range(6* 60 * 60, 30 * 60 * 60)
     by = ir.predict(bx)
-    plt.plot(x, y, '.')
+    # plt.plot(x, y, '.')
     plt.plot(bx, by, '-')
 
 
@@ -39,7 +36,21 @@ def show_driver(driver):
 
     data = all_data[all_data.Driver == driver]
 
-    show_data(data)
+    data_w_0 = data[data.wDay == 0]
+    data_w_1 = data[data.wDay == 1]
+    data_w_2 = data[data.wDay == 2]
+    data_w_3 = data[data.wDay == 3]
+    data_w_4 = data[data.wDay == 4]
+    data_w_5 = data[data.wDay == 5]
+    data_w_6 = data[data.wDay == 6]
+
+    show_data(data_w_0)
+    show_data(data_w_1)
+    show_data(data_w_2)
+    show_data(data_w_3)
+    show_data(data_w_4)
+    show_data(data_w_5)
+    show_data(data_w_6)
     # newData = pandas.DataFrame()
     # newData['random'] = data.InRestaurant.map(lambda val: numpy.random.randint(1, 10))
     # newData['InRestaurant'] = data.InRestaurant
