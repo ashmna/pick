@@ -15,7 +15,7 @@ function getGeoCode(address) {
       resolve(cache[address]);
       return;
     }
-    const url = `http://maps.google.com/maps/api/geocode/json?address=${address},Armenia`;
+    const url = `http://maps.google.com/maps/api/geocode/json?address=${address},Armenia`; //&key=AIzaSyDbq14dexsSRDS-IForZzAKtD3_RnhkOrw
 
     http.get(url, function(res){
       let body = '';

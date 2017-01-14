@@ -1,0 +1,8 @@
+version: '2'
+services:
+  pick:
+    build: .
+    volumes:
+      - .:/pick
+    ports:
+      - "3080:3000"
