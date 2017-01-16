@@ -1,5 +1,8 @@
 .idea
+model/*
+
 node_modules/*
+node_modules/tools/*
 resources/dataset/*
 resources/dataset_per_object/*
 resources/menu/*

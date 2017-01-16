@@ -1,0 +1,627 @@
+========================ERRORS======================
+[
+    {
+        "str": "35\tTaronci\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "94\tSakharov Square\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "137\tTigranMec Khanjyan khachmeruk\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "138\tKhudyakov\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "166\tHin yerivatsi\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "174\tKhudyakov\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "210\tVardananc bn 48\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "277\tDalma Garden Mall 2nd floor\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "278\tDalma Garden Mall 2nd floor\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "286\tDalma Garden Mall\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "296\tRostomi tiv 187\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "328\tDalma Garden Mall\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "343\tDavtashen, T. Petrosyani verjnamas",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "401\tMamikonyants\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "404\tHrachya Nersisyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "411\tDalma Garden Mall\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "470\tHanrapetutyun\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "479\tHanrapetutyun\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "502\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "526\tAmiryan Green Bean Cafe\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "532\tHanrapetutyun\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "552\tSakharov Square\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "561\tSvachyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "584\tKuybishevi\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "596\tAvanesov Erebuni Masiv\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "608\tHanrapetutyan hraparak metro 4 taxavar\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "630\tKaravarakan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "641\tOrbeli Eghbayrner\tTsaghkadzor",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "642\tTandzaghbyur\tTsagkhadzor",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "652\tGortsaranayin\tHrazdan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "653\tIsahakyan nrb\tTsaghkadzor",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "655\tKaravarakan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "656\tHanrapetutyun\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "658\t\tTsaghkadzor\r\n659",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "665\tMagistrosi\tTsaghkadzor",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "668\tDalma Garden Mall\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "704\tAzatutyan avenue\tDzoraghbyur,reg. Kotayk",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "712\tOgostos\tHrazdan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "727\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "728\tRossia tonavajar\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "752\tHrachya Nersisyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "765\tKhudyakov Krpakashar\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "767\tKhudyakov Krpakashar\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "771\tAbovyan Highway, Kotayk\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "787\tGyulbenkian Avetisian crossroad\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "789\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "808\tE. Tadevosyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "819\tT Petrosyan, Davitashen 3 tagh\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "842\tHrazdani Kirj\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "858\tParaqar, Yerevanyan Ave.\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "859\tParaqari, Yerevanyan Ave.\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "884\tRossia tonavajar\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "897\tDroyi\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "907\tZaqyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "910\tMamikonyants\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "974\tKhudyakov, Avan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "978\tRijkovi\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "982\tOghakadzev zbosaygi\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "985\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "986\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "989\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "994\tSakharov Square\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "997\tShchorsi\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1000\tKhakhakhutyan okhak\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1027\tCherkezi Dzor, Karmir Berd\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1035\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1037\tVerin Ptkhni\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1038\tVerin Ptkhni\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1040\tMantashyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1041\tGyumru Khjukhi\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1052\tBarekamutyan getnancum\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1062\tBagratunyats\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1075\tVanatur Hay Fidayinneri\tTsaghkadzor",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1077\tArhestavorneri 101t\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1108\tShiraki\tGyumri",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1115\tHakob Hakobyan\tDigiTec Expo 2016",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1173\tV Ajemyan\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    },
+    {
+        "str": "1185\tMamikonyants\tYerevan",
+        "geocode": {
+            "results": [],
+            "status": "ZERO_RESULTS"
+        },
+        "error": {}
+    }
+]
