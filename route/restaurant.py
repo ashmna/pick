@@ -1,4 +1,4 @@
-from bottle import route, response
+from bottle import route
 
 from service import restaurant
 

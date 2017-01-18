@@ -43,7 +43,7 @@ function syncData(matchs, i) {
   }
 
     if (!go) {
-        if (res[1] == 33557) {
+        if (res[1] == 447624) {
             go = true;
         }
         setTimeout(() => {
@@ -62,4 +62,9 @@ function syncData(matchs, i) {
     }
   });
 }
+//getGeoCode('komitas,Yerevan').then((geocode) => {
+//        console.log(geocode.results[0].geometry.location.lat)
+//        console.log(geocode.results[0].geometry.location.lng)
+//        console.log(geocode.results[0].formatted_address.replace(/\,/gi, ""))
+//})
 syncData(matchs, 0);

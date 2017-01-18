@@ -1,5 +1,4 @@
 import bottle
-from bottle import response
 
 import route
 

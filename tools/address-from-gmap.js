@@ -8,14 +8,38 @@ function wait(ms) {
      end = new Date().getTime();
   }
 }
+var exec = require('child_process').exec;
 
+function getGeoCode1(address) {
+  return new Promise((resolve, reject) => {
+    if (cache[address]) {
+      resolve(cache[address]);
+      return;
+    }
+    const url = `https://maps.google.com/maps/api/geocode/json?address=${address},Armenia&key=AIzaSyDbq14dexsSRDS-IForZzAKtD3_RnhkOrw`
+    exec(`curl -X GET "${url}"`, function(error, body, stderr){
+
+          const data = JSON.parse(body);
+          if (data.status === "OVER_QUERY_LIMIT") {
+            wait(1000);
+            getGeoCode(address).then(resolve);
+          } else {
+            cache[address] = data;
+            resolve(data);
+          }
+
+
+    });
+  });
+}
 function getGeoCode(address) {
   return new Promise((resolve, reject) => {
     if (cache[address]) {
       resolve(cache[address]);
       return;
     }
-    const url = `http://maps.google.com/maps/api/geocode/json?address=${address},Armenia`; //&key=AIzaSyDbq14dexsSRDS-IForZzAKtD3_RnhkOrw
+    const url = `http://maps.google.com/maps/api/geocode/json?address=${address},Armenia` //&key=AIzaSyDbq14dexsSRDS-IForZzAKtD3_RnhkOrw
+
 
     http.get(url, function(res){
       let body = '';
