@@ -21,8 +21,8 @@ class Restaurant:
         return DataResult(order_items)
 
     def get_restaurant_item_cooking_speed(self, restaurant_id, item_number):
-        model = self.load_cooking_speed_model(restaurant_id, item_number)
-        x = self.to_nested_list(range(0, 24 * 60 * 60, 10*60))
+        model = self.__load_cooking_speed_model(restaurant_id, item_number)
+        x = self.__to_nested_list(range(0, 24 * 60 * 60, 10 * 60))
         y = model.predict(x).tolist()
 
         for idx, val in enumerate(y):
@@ -78,33 +78,33 @@ class Restaurant:
 
         return AnyResult(result)
 
-    def load_cooking_speed_model(self, restaurant_id, item_number):
+    def __load_cooking_speed_model(self, restaurant_id, item_number):
         path = 'model/cooking-speed/knn-%d-%d.pkl' % (int(restaurant_id), int(item_number))
         if os.path.isfile(path):
             return joblib.load(path)
-        res = self.train_cooking_speed_model(path, restaurant_id, item_number)
+        res = self.__train_cooking_speed_model(path, restaurant_id, item_number)
         if not res and item_number:
-            return self.load_cooking_speed_model(restaurant_id, 0)
+            return self.__load_cooking_speed_model(restaurant_id, 0)
         return joblib.load(path)
 
-    def load_cooking_speed_data(self, restaurant_id, item_number):
+    def __load_cooking_speed_data(self, restaurant_id, item_number):
         path = 'data/cooking-speed/%d-%d.csv' % (int(restaurant_id), int(item_number))
         if not os.path.isfile(path):
             return None
         return pandas.read_csv(path)
 
-    def train_cooking_speed_model(self, path, restaurant_id, item_number=0):
-        data = self.load_cooking_speed_data(restaurant_id, item_number)
+    def __train_cooking_speed_model(self, path, restaurant_id, item_number=0):
+        data = self.__load_cooking_speed_data(restaurant_id, item_number)
         if data is None:
             return False
-        x = self.to_nested_list(data['time'])
+        x = self.__to_nested_list(data['time'])
         y = data['cookingTime'].as_matrix()
         knn = neighbors.KNeighborsRegressor(n_neighbors=len(x) / 6, weights='uniform')
         knn.fit(x, y)
         joblib.dump(knn, path)
         return True
 
-    def to_nested_list(self, arr):
+    def __to_nested_list(self, arr):
         data = []
         for item in arr:
             data.append([item])
