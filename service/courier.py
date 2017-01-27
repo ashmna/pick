@@ -126,6 +126,10 @@ class Courier:
 
         return AnyResult(x)
 
+    def estimate_courier_speed(self, courier_id, time, week_day):
+        model = self.__load_courier_speed_model(courier_id)
+        return model.predict([time])
+
     def get_average_time(self):
         result = list()
         arr = np.arange(0.5, 10.0, 0.1)
