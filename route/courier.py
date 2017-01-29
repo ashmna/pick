@@ -9,12 +9,12 @@ def generate_couriers_speed_data():
 
 
 @route('/courier/list', method='GET')
-def get_restaurants():
+def get_couriers():
     return courier.get_couriers().to_json()
 
 
 @route('/courier/speed/<courier_id:float>', method='GET')
-def get_restaurants(courier_id):
+def get_courier_speed(courier_id):
     return courier.get_courier_speed(courier_id).to_json()
 
 

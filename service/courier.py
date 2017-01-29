@@ -105,7 +105,10 @@ class Courier:
 
         return AnyResult(result)
     def get_couriers(self):
-        couriers = self.data['courier'].value_counts()
+        # group = self.data.groupby('courier')
+        # couriers = group.aggregate()
+        couriers = self.data.groupby('courier').agg({'count': np.sum})
+
         print couriers.head()
         couriers_data = list()
         # for courier in couriers:
