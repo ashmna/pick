@@ -9,3 +9,12 @@ def haversine(lon1, lat1, lon2, lat2):
     c = 2 * asin(sqrt(a))
     km = 6367 * c
     return km
+
+
+def filter_object(obj, filter_function):
+    filtered_obj = {}
+    for key in obj:
+        row = obj[key]
+        if filter_function(row):
+            filtered_obj[key] = row
+    return filtered_obj

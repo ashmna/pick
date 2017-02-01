@@ -1,15 +1,14 @@
+import copy
 from datetime import datetime, timedelta
-
-import pandas
 
 from data_result import DataResult, AnyResult
 from service import restaurant, courier
-from util import haversine
+from util import haversine, filter_object
 
 
 class Pick:
     def __init__(self):
-        self.orders = pandas.DataFrame()
+        self.orders = list()
         self.couriers = {}
 
     def courier_enable(self, courier_id):
@@ -104,29 +103,30 @@ class Pick:
         return courier.sort(['arrive_time'])
 
     def __is_time_to_choose_courier(self, couriers, time_seconds):
-        filtered_couriers = couriers[couriers['estimated_times'] <= time_seconds]
+        filtered_couriers = filter_object(couriers, lambda r: r['estimated_times'] <= time_seconds)
         if len(filtered_couriers) == 0:
             return True
 
         return len(filtered_couriers) / len(couriers) * 100 <= 50
 
     def __get_free_couriers_at_time(self, couriers, date_time, additional_time):
-        filtered_couriers = couriers[couriers['estimated_times'] <= date_time + additional_time]
+        filtered_couriers = filter_object(couriers, lambda r: r['estimated_times'] <= date_time + additional_time)
         if len(filtered_couriers) == 0:
             return self.__get_free_couriers_at_time(couriers, date_time, additional_time * 2)
         return filtered_couriers
 
     def __get_free_couriers(self, order, date_time, additional_time):
-        estimated_times = list()
-        distances = list()
         t = date_time.time()
         time_seconds = t.hour * 60 * 60 + t.minute * 60 + t.second
-        for index, row in self.couriers.iterrows():
-            courier_id = row['courier_id']
+
+        couriers = copy.deepcopy(self.couriers)
+
+        for courier_id in couriers:
+            row = couriers[courier_id]
 
             if row['status'] == "away":
-                distances.append(-1)
-                estimated_times.append(-1)
+                row['distance'] = -1
+                row['estimated_time'] = -1
             elif row['status'] == "busy":
                 couriers_order = self.__get_order_by_id(row['order_id'])
 
@@ -136,10 +136,10 @@ class Pick:
                     order['lng_client'],
                     order['lat_client']
                 )
-                distances.append(distance)
                 speed = courier.estimate_courier_speed(courier_id, time_seconds)
                 estimated_time = distance / speed
-                estimated_times.append(estimated_time + additional_time)
+                row['distance'] = distance
+                row['estimated_time'] = estimated_time + additional_time
             elif row['status'] == "wait":
                 distance = haversine(
                     row['lng'],
@@ -147,21 +147,17 @@ class Pick:
                     order['lng_client'],
                     order['lat_client']
                 )
-                distances.append(distance)
-
                 speed = courier.estimate_courier_speed(courier_id, time_seconds)
                 estimated_time = distance / speed
-                estimated_times.append(estimated_time)
+                row['distance'] = distance
+                row['estimated_time'] = estimated_time
 
-        couriers = self.couriers.copy()
-        couriers['distances'] = distances
-        couriers['estimated_times'] = estimated_times
-        return couriers[couriers['status'] != "away"]
+        return filter_object(couriers, lambda r: r['status'] != "away")
 
     def __get_order_by_id(self, order_id):
-        matrix = self.orders.loc[[order_id]].as_matrix()
-        if len(matrix) == 1:
-            return matrix[0]
+        order_id = int(order_id)
+        if len(self.orders) > order_id:
+            return self.orders[order_id]
         return {}
 
     @staticmethod
