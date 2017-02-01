@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 
 import pandas
 
-from data_result import DataResult
+from data_result import DataResult, AnyResult
 from service import restaurant, courier
 from util import haversine
 
@@ -10,35 +10,43 @@ from util import haversine
 class Pick:
     def __init__(self):
         self.orders = pandas.DataFrame()
-        self.couriers = pandas.DataFrame()
+        self.couriers = {}
 
     def courier_enable(self, courier_id):
         courier_obj = self.__get_courier_by_id(courier_id)
         courier_obj['status'] = "wait"
+        return AnyResult(courier_obj)
 
     def courier_disable(self, courier_id):
         courier_obj = self.__get_courier_by_id(courier_id)
         courier_obj['status'] = "away"
+        return AnyResult(courier_obj)
 
     def courier_busy(self, courier_id, order_id):
         courier_obj = self.__get_courier_by_id(courier_id)
         courier_obj['status'] = "busy"
         courier_obj['order_id'] = order_id
+        return AnyResult(courier_obj)
 
     def courier_move(self, courier_id, lat, lng):
         courier_obj = self.__get_courier_by_id(courier_id)
         courier_obj['lat'] = lat
         courier_obj['lng'] = lng
+        return AnyResult(courier_obj)
 
     def __get_courier_by_id(self, courier_id):
-        matrix = self.couriers[self.couriers['id'] == courier_id].as_matrix()
-        if len(matrix) == 1:
-            return matrix[0]
+        courier_id = int(courier_id)
+        if self.couriers.has_key(courier_id):
+            return self.couriers[courier_id]
+
         courier_obj = {
-            'courier_id': courier_id
+            'courier_id': courier_id,
+            'status': "away",
+            'lat': 0,
+            'lng': 0,
+            'order_id': 0
         }
-        # todo add more info
-        self.couriers.append(courier_obj)
+        self.couriers[courier_id] = courier_obj
         return courier_obj
 
     def add_order(self):
