@@ -6,7 +6,7 @@ import pandas
 from sklearn import neighbors
 from sklearn.externals import joblib
 
-from data_result import AnyResult
+from data_result import AnyResult, DataResult
 
 
 class Courier:
@@ -104,18 +104,18 @@ class Courier:
             })
 
         return AnyResult(result)
-    def get_couriers(self):
-        # group = self.data.groupby('courier')
-        # couriers = group.aggregate()
-        couriers = self.data.groupby('courier').agg({'count': np.sum})
 
-        print couriers.head()
-        couriers_data = list()
-        # for courier in couriers:
-        #     couriers_data.append({
-        #         "": courier[]
-        #     })
-        return AnyResult(couriers.as_matrix())
+    def get_couriers(self):
+        courier_ids = list()
+        self.data['row'] = 1
+        grouped = self.data.groupby('courier')
+        for i in grouped.indices:
+            courier_ids.append(i)
+        couriers = grouped['row'].agg({'count': np.sum})
+        couriers['courier_id'] = courier_ids
+        couriers = couriers.sort('count', ascending=0)
+
+        return DataResult(couriers)
 
     def get_courier_speed(self, courier_id):
         model = self.__load_courier_speed_model(courier_id)
