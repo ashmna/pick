@@ -176,4 +176,16 @@ class Pick:
         return estimated_cooking_time
 
     def get_state(self):
-        return DataResult(self.orders)
+        data = list()
+        for courier_id in self.couriers:
+            row = self.couriers[courier_id]
+            if row['status'] == "away":
+                continue
+            tooltip = 'Courier: %s<br>\nlat: %s, lng: %s,<br>\nStatus: "%s"<br>\n:OrderID %s' % (str(row['courier_id']), str(row['lat']), str(row['lng']), str(row['status']), str(row['order_id']))
+            data.append((
+                float(row['lat']),
+                float(row['lng']),
+                tooltip,
+                row['status'],
+            ))
+        return AnyResult(data)

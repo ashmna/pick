@@ -113,8 +113,9 @@ class Courier:
             courier_ids.append(i)
         couriers = grouped['row'].agg({'count': np.sum})
         couriers['courier_id'] = courier_ids
-        couriers = couriers.sort('count', ascending=0)
+        couriers = couriers.sort_values('count', ascending=0)
 
+        couriers = couriers[couriers['count'] > 500]
         return DataResult(couriers)
 
     def get_courier_speed(self, courier_id):
