@@ -32,6 +32,10 @@ class Restaurant:
 
         return AnyResult(x)
 
+    def estimate_cooking_time(self, restaurant_id, item_number, time, week_day):
+        model = self.__load_cooking_speed_model(restaurant_id, item_number)
+        return int(model.predict([[time]])[0])
+
     def generate_cooking_speed_data(self):
         orders = pandas.read_csv('data/orders.csv')
         data = pandas.merge(orders, self.order_items, left_on='ID', right_on='OrderNumber')

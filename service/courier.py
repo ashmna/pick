@@ -132,7 +132,7 @@ class Courier:
 
     def estimate_courier_speed(self, courier_id, time, week_day):
         model = self.__load_courier_speed_model(courier_id)
-        return model.predict([time])
+        return model.predict([[time]])[0]
 
     def get_average_time(self):
         result = list()
@@ -162,11 +162,12 @@ class Courier:
 
     def __train_cooking_speed_model(self, path, courier_id):
         data = self.__load_courier_speed_data(courier_id)
+        if data is None:
+            return False
+
         data = data[data['distance'] > 1]
         data = data[data['time_in_route'] > 4 * 60]
 
-        if data is None:
-            return False
         x = self.__to_nested_list(data['time'])
         y = data['km_h'].as_matrix()
         knn = neighbors.KNeighborsRegressor(n_neighbors=len(x) / 6, weights='uniform')
