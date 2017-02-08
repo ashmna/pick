@@ -3,6 +3,7 @@ from bottle import route, request
 from service import pick
 import json
 
+
 @route('/pick/courier/enable/<courier_id:float>', method='GET')
 def courier_enable(courier_id):
     return pick.courier_enable(courier_id).to_json()

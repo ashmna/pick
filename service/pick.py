@@ -34,7 +34,7 @@ class Pick:
 
     def courier_complete_order(self, courier_id):
         courier_obj = self.__get_courier_by_id(courier_id)
-        if courier_obj['order_id'] != 0:
+        if courier_obj['order_id'] != -1:
             self.__done_order(courier_obj['order_id'])
         return AnyResult(courier_obj)
 
@@ -48,7 +48,7 @@ class Pick:
             'status': "away",
             'lat': 0,
             'lng': 0,
-            'order_id': 0
+            'order_id': -1
         }
         self.couriers[courier_id] = courier_obj
         return courier_obj
@@ -121,6 +121,8 @@ class Pick:
         courier['status'] = "wait"
         courier['lat'] = order['lat_client']
         courier['lng'] = order['lng_client']
+        courier['estimated_complete_datetime'] = None
+        courier['order_id'] = -1
 
     def __set_courier_for_order(self, courier_obj, order):
         if courier_obj is None:
