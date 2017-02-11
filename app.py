@@ -23,5 +23,5 @@ def add_cors_headers():
 
 if __name__ == '__main__':
     app = bottle.app()
-    app.run(port=3000)
+    app.run(host='0.0.0.0', port=3000)
     route.start()
