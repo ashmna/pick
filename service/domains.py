@@ -1,26 +1,27 @@
-from datetime import datetime, timedelta
+from mongoengine import *
+
+connect('pick', host='localhost', username='', password='')
 
 
-class Courier:
-    courier_id = 0
-    status = "away"  # away, wait, busy
-    lat = 0
-    lng = 0
-    order_id = 0
+class Courier(Document):
+    courier_id = LongField()
+    status = StringField(max_length=4)  # away, wait, busy
+    lat = LongField()
+    lng = LongField()
+    order_id = LongField()
 
 
 class Order:
-    order_id = 0
-    status = "ToDo"  # ToDo, InProgress, Done
-    start_datetime = None
-    estimated_cooked_datetime = None
-    estimated_complete_datetime = None
-    lat_restaurant = 0
-    lng_restaurant = 0
-    lat_client = 0
-    lng_client = 0
-    distance = 0
-    courier_id = 0
-    restaurant_id = 0
-    items = []  # {id, count}
-
+    order_id = LongField()
+    status = StringField(max_length=10)  # ToDo, InProgress, Done
+    start_datetime = DateTimeField()
+    estimated_cooked_datetime = DateTimeField()
+    estimated_complete_datetime = DateTimeField()
+    lat_restaurant = LongField()
+    lng_restaurant = LongField()
+    lat_client = LongField()
+    lng_client = LongField()
+    distance = LongField()
+    courier_id = LongField()
+    restaurant_id = LongField()
+    items = ListField()  # {id, count}
