@@ -32,7 +32,7 @@ class Restaurant:
 
         return AnyResult(x)
 
-    def estimate_cooking_time(self, restaurant_id, item_number, time, week_day):
+    def estimate_cooking_time(self, partner_id, restaurant_id, item_number, time, week_day):
         model = self.__load_cooking_speed_model(restaurant_id, item_number)
         return int(model.predict([[time]])[0])
 
