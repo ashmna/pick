@@ -23,6 +23,7 @@ class Order(Document):
     complete_datetime = DateTimeField()
 
     def start(self, partner_id, date_time, data):
+        self.order_id = int((date_time - datetime(1970, 1, 1)).total_seconds())
         self.partner_id = partner_id
         self.status = "todo"
         self.courier_id = 0

@@ -23,8 +23,8 @@ class Courier(Document):
         self.save()
 
     def move(self, lat, lng):
-        self.lat = lat
-        self.lng = lng
+        self.lat = float(lat)
+        self.lng = float(lng)
         self.save()
         # todo emit event
 
