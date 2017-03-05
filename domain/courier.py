@@ -40,10 +40,19 @@ class Courier(Document):
     def is_wait(self):
         return self.status == "wait"
 
+    def has_upcoming_order(self):
+        return len(self.upcoming_orders) > 0
+
+    def get_last_upcoming_order_info(self):
+        return self.upcoming_orders[len(self.upcoming_orders) - 1]
+
     def clean_upcoming_orders(self):
         self.upcoming_orders = []
 
-    def put_upcoming_order(self, order_id):
+    def put_upcoming_order(self, order_id, client_arrive_datetime):
         if not self.upcoming_orders:
-            self.upcoming_orders = []
-        self.upcoming_orders.append(order_id)
+            self.upcoming_orders = list()
+        self.upcoming_orders.append({
+            'order_id': order_id,
+            'client_arrive_datetime': client_arrive_datetime,
+        })

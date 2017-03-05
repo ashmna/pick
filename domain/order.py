@@ -63,6 +63,12 @@ class Order(Document):
         self.complete_datetime = datetime.now()
         self.save()
 
+    def set_courier(self, courier_id, estimated_complete_datetime):
+        self.status = "inProgress"
+        self.courier_id = courier_id
+        self.estimated_complete_datetime = estimated_complete_datetime
+        self.save()
+
     def get_start_seconds(self):
         t = self.start_datetime.time()
         return t.hour * 60 * 60 + t.minute * 60 + t.second
@@ -91,3 +97,11 @@ class Order(Document):
 
         return estimated_cooking_time
 
+    def put_pick_history(self, courier_id, client_arrive_datetime):
+        if not self.pick_history:
+            self.pick_history = list()
+        self.pick_history.append({
+            'date_time': datetime.now(),
+            'courier_id': courier_id,
+            'client_arrive_datetime': client_arrive_datetime,
+        })
