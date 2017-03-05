@@ -8,6 +8,7 @@ class Courier(Document):
     lat = FloatField()
     lng = FloatField()
     order_id = LongField()
+    upcoming_orders = ListField()
 
     def enable(self):
         self.status = "wait"
@@ -39,3 +40,10 @@ class Courier(Document):
     def is_wait(self):
         return self.status == "wait"
 
+    def clean_upcoming_orders(self):
+        self.upcoming_orders = []
+
+    def put_upcoming_order(self, order_id):
+        if not self.upcoming_orders:
+            self.upcoming_orders = []
+        self.upcoming_orders.append(order_id)

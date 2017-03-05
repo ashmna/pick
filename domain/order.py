@@ -21,6 +21,7 @@ class Order(Document):
     restaurant_id = LongField()
     items = ListField()  # {id, count}
     complete_datetime = DateTimeField()
+    pick_history = ListField()
 
     def start(self, partner_id, date_time, data):
         self.order_id = int((date_time - datetime(1970, 1, 1)).total_seconds())
@@ -68,6 +69,10 @@ class Order(Document):
 
     def get_estimated_cooked_seconds(self):
         t = self.estimated_cooked_datetime.time()
+        return t.hour * 60 * 60 + t.minute * 60 + t.second
+
+    def get_estimated_complete_seconds(self):
+        t = self.estimated_complete_datetime.time()
         return t.hour * 60 * 60 + t.minute * 60 + t.second
 
     def estimate_cooking_time(self):

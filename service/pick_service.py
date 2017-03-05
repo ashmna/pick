@@ -42,6 +42,39 @@ class PickService:
         order_obj = self.order_repository.create_new_order(partner_id, order_data)
         return order_obj
 
+
+    def calculate(self, partner_id):
+        orders = self.order_repository.get_orders_need_to_pick(partner_id)
+        all_couriers = self.courier_repository.get_couriers()
+        now = datetime.now().time()
+        now_time_seconds = now.hour * 60 * 60 + now.minute * 60 + now.second
+
+        for courier_obj in all_couriers:
+            courier_obj.clean_upcoming_orders()
+
+        for order_obj in orders:
+            time_seconds = order_obj.get_estimated_cooked_seconds()
+            time_seconds -= now_time_seconds
+            couriers = self._estimate_restaurant_arrive_time(all_couriers, order_obj, now, 3 * 60)
+            if len(couriers) == 0:
+                continue
+            couriers = self._get_free_couriers_at_time(couriers, time_seconds, 3 * 60)
+            couriers = self._calculate_arrive_time(
+                couriers,
+                order_obj.distance,
+                order_obj.get_estimated_cooked_seconds(),
+                order_obj.estimated_cooked_datetime.weekday()
+            )
+            min_arrive_time = 0
+            min_courier = None
+            for courier_obj in couriers:
+                if min_arrive_time == 0 or courier_obj.client_arrive_time_second < min_arrive_time:
+                    min_arrive_time = courier_obj.client_arrive_time_second
+                    min_courier = courier_obj
+            # if min_courier:
+
+
+
     def get_courier_for_order(self, partner_id, order_id):
         order_obj = self.order_repository.get_by_id(partner_id, order_id)
 
@@ -178,7 +211,6 @@ class PickService:
                 estimated_second = additional_time_seconds + (distance / speed * 60 * 60)
                 courier_obj.restaurant_arrive_time_second = estimated_second
         return couriers
-
 
     def get_state(self):
         return AnyResult([])

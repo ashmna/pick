@@ -13,3 +13,6 @@ class OrderRepository:
         order_obj = Order()
         order_obj.start(partner_id, datetime.now(), data)
         return order_obj
+
+    def get_orders_need_to_pick(self, partner_id):
+        return Order.objects(partner_id=partner_id, status="todo")
