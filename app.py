@@ -2,6 +2,8 @@ import bottle
 
 import route
 
+from scheduling import schedule
+
 
 @bottle.route('/<:re:.*>', method='OPTIONS')
 def enable_cors_generic_route():
@@ -22,6 +24,10 @@ def add_cors_headers():
 
 
 if __name__ == '__main__':
-    app = bottle.app()
-    app.run(host='0.0.0.0', port=3000)
+    schedule()
+    # app = bottle.app()
+    # app.run(host='0.0.0.0', port=3000)
     route.start()
+
+
+

@@ -16,5 +16,8 @@ class CourierRepository:
             courier_obj.move(0, 0)
             return courier_obj
 
-    def get_couriers(self):
-        return Courier.objects(status_in=["wait", "busy"])
+    def get_couriers(self, partner_id):
+        return Courier.objects(partner_id=partner_id, status__in=["wait", "busy"])
+
+    def save(self, courier_obj):
+        return courier_obj.save()

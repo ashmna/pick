@@ -18,8 +18,15 @@ class TokenRepository:
             token_obj = self.get_by_partner(partner_id)
         except Token.DoesNotExist:
             token_obj = Token()
+            token_obj.enabled = True
             token_obj.partner_id = partner_id
+            token_obj.settings = {
+                'calculation_velocity': 10
+            }
         m = hashlib.md5()
         token_obj.token = m.update(str(datetime.now()))
         token_obj.save()
         return token_obj
+
+    def get_all(self):
+        return Token.objects(enabled=True)

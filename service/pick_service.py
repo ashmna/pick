@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 from data_result import AnyResult
-from util import haversine, filter_object
+from util import haversine, filter_list
 
 
 class PickService:
@@ -44,9 +44,10 @@ class PickService:
 
     def calculate(self, partner_id):
         orders = self.order_repository.get_orders_need_to_pick(partner_id)
-        all_couriers = self.courier_repository.get_couriers()
-        now = datetime.now().time()
-        now_time_seconds = now.hour * 60 * 60 + now.minute * 60 + now.second
+        all_couriers = self.courier_repository.get_couriers(partner_id)
+        now = datetime.now()
+        t = now.time()
+        now_time_seconds = t.hour * 60 * 60 + t.minute * 60 + t.second
         order_to_courier = {}
         orders_ids = list()
         couriers_ids = list()
@@ -76,15 +77,18 @@ class PickService:
         for courier_obj in all_couriers:
             couriers_ids.append(courier_obj.courier_id)
             if courier_obj.has_upcoming_order():
-                for index in courier_obj.upcoming_orders:
-                    upcoming = courier_obj.upcoming_orders[index]
-                    order_to_courier[upcoming.order_id] = {
+                for index, upcoming in enumerate(courier_obj.upcoming_orders):
+                    order_to_courier[str(upcoming['order_id'])] = {
                         'courier_id': courier_obj.courier_id,
                         'sequence': index + 1,
-                        'client_arrive_datetime': courier_obj.client_arrive_datetime,
+                        'client_arrive_datetime': upcoming['client_arrive_datetime'],
                     }
 
-        self.calculation_repository.save_data(order_to_courier, orders_ids, couriers_ids)
+        self.calculation_repository.save_data(partner_id, order_to_courier, orders_ids, couriers_ids)
+        for courier_obj in all_couriers:
+            self.courier_repository.save(courier_obj)
+        for order_obj in orders:
+            self.order_repository.save(order_obj)
 
     @staticmethod
     def _set_upcoming_order(courier_obj, order_obj):
@@ -122,7 +126,7 @@ class PickService:
     #     return float(len(filtered_couriers)) / float(len(wait_couriers)) * 100 <= 50
 
     def _get_free_couriers_at_time(self, couriers, time_seconds, additional_time):
-        filtered_couriers = filter_object(couriers, lambda obj: obj.restaurant_arrive_time_second <= time_seconds + additional_time)
+        filtered_couriers = filter_list(couriers, lambda obj: obj.restaurant_arrive_time_second <= time_seconds + additional_time)
         if len(filtered_couriers) == 0:
             return self._get_free_couriers_at_time(couriers, time_seconds, additional_time * 2)
         return filtered_couriers
@@ -136,7 +140,7 @@ class PickService:
         for courier_obj in couriers:
             if courier_obj.has_upcoming_order():
                 last_upcoming_order_info = courier_obj.get_last_upcoming_order_info()
-                couriers_order = self.order_repository.get_by_id(courier_obj.partner_id, last_upcoming_order_info.order_id)
+                couriers_order = self.order_repository.get_by_id(courier_obj.partner_id, last_upcoming_order_info['order_id'])
                 distance = haversine(
                     couriers_order.lng_client,
                     couriers_order.lat_client,
@@ -144,7 +148,7 @@ class PickService:
                     order_obj.lat_restaurant
                 )
 
-                estimated_complete_datetime = last_upcoming_order_info.client_arrive_datetime
+                estimated_complete_datetime = last_upcoming_order_info['client_arrive_datetime']
                 t = estimated_complete_datetime.time()
                 estimated_complete_seconds = t.hour * 60 * 60 + t.minute * 60 + t.second
 

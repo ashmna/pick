@@ -7,7 +7,7 @@ class TokenService:
 
     def generate_token(self, token_data):
         token_obj = self.token_repository.generate_new_token(
-            partner_id=token_data.partner_id
+            partner_id=token_data['partner_id']
         )
         return token_obj
 
@@ -18,3 +18,6 @@ class TokenService:
         return 1
         token_obj = self.get_data(request.query['token'])
         return token_obj.partner_id
+
+    def get_all(self):
+        return self.token_repository.get_all()

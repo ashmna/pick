@@ -11,6 +11,14 @@ def haversine(lon1, lat1, lon2, lat2):
     return km
 
 
+def filter_list(data, filter_function):
+    filtered_list = list()
+    for obj in data:
+        if filter_function(obj):
+            filtered_list.append(obj)
+    return filtered_list
+
+
 def filter_object(obj, filter_function):
     filtered_obj = {}
     for key in obj:

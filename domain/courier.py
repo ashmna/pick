@@ -47,11 +47,9 @@ class Courier(Document):
         return self.upcoming_orders[len(self.upcoming_orders) - 1]
 
     def clean_upcoming_orders(self):
-        self.upcoming_orders = []
+        self.upcoming_orders = list()
 
     def put_upcoming_order(self, order_id, client_arrive_datetime):
-        if not self.upcoming_orders:
-            self.upcoming_orders = list()
         self.upcoming_orders.append({
             'order_id': order_id,
             'client_arrive_datetime': client_arrive_datetime,
