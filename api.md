@@ -1,8 +1,7 @@
 
 GET '/pick/courier/enable/<courier_id>'
 GET '/pick/courier/disable/<courier_id>'
-GET '/pick/courier/busy/<courier_id>'
-GET '/pick/courier/move/<courier_id>?lat=<lat>&lng=<lat>'
+GET '/pick/courier/move/<courier_id>?lat=<lat>&lng=<lng>'
 GET '/pick/courier/complete/<courier_id>'
 
 POST '/pick/order/add/<order_id>'
@@ -24,7 +23,7 @@ GET '/pick/order/courier/<order_id>'
 {
     "courier_id": 0,
     "sequence": 1,
-    "client_arrive_datetime": "2017-12-31T23:59:59.999Z"
+    "order_complete_time": "2017-12-31T23:59:59.999Z"
 }
 ```
 PUT '/pick/order/courier/<order_id>/<courier_id>'

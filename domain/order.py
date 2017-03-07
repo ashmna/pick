@@ -23,8 +23,9 @@ class Order(Document):
     complete_datetime = DateTimeField()
     pick_history = ListField()
 
-    def start(self, partner_id, date_time, data):
-        self.order_id = int((date_time - datetime(1970, 1, 1)).total_seconds())
+    def start(self, partner_id, order_id, date_time, data):
+        # self.order_id = int((date_time - datetime(1970, 1, 1)).total_seconds())
+        self.order_id = order_id
         self.partner_id = partner_id
         self.status = "todo"
         self.courier_id = 0

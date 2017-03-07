@@ -38,9 +38,37 @@ class PickService:
             order_obj.done_order(courier_obj)
         return courier_obj
 
-    def add_order(self, partner_id, order_data):
-        order_obj = self.order_repository.create_new_order(partner_id, order_data)
+    def add_order(self, partner_id, order_id, order_data):
+        order_obj = self.order_repository.create_new_order(partner_id, order_id, order_data)
         return order_obj
+
+    def get_courier_for_order(self, partner_id, order_id):
+        calculation_obj = self.calculation_repository.get(partner_id)
+        order_to_courier = calculation_obj.order_to_courier
+        if str(order_id) in order_to_courier:
+            return AnyResult(order_to_courier[str(order_id)])
+        return AnyResult({})
+
+    def set_courier_for_order(self, partner_id, order_id, courier_id):
+        now = datetime.now()
+        order_obj = self.order_repository.get_by_id(partner_id, order_id)
+        courier_obj = self.courier_repository.get_by_id(partner_id, courier_id)
+
+        courier_obj.clean_upcoming_orders()
+        self._estimate_restaurant_arrive_time([courier_obj], order_obj, now, 3 * 60)
+        self._calculate_arrive_time([courier_obj], order_obj.distance, order_obj.estimated_cooked_datetime)
+
+        order_obj.set_courier(
+            courier_obj.courier_id,
+            courier_obj.client_arrive_datetime
+        )
+        courier_obj.pick(order_obj.order_id)
+
+        self.order_repository.save(order_obj)
+        self.courier_repository.save(courier_obj)
+
+        self.calculate(partner_id)
+        return AnyResult({})
 
     def calculate(self, partner_id):
         orders = self.order_repository.get_orders_need_to_pick(partner_id)
@@ -63,7 +91,7 @@ class PickService:
             if len(couriers) == 0:
                 continue
             couriers = self._get_free_couriers_at_time(couriers, time_seconds, 3 * 60)
-            couriers = self._calculate_arrive_time(couriers, order_obj.distance)
+            couriers = self._calculate_arrive_time(couriers, order_obj.distance, order_obj.estimated_cooked_datetime)
 
             min_arrive_time = 0
             min_courier_obj = None
@@ -81,7 +109,7 @@ class PickService:
                     order_to_courier[str(upcoming['order_id'])] = {
                         'courier_id': courier_obj.courier_id,
                         'sequence': index + 1,
-                        'client_arrive_datetime': upcoming['client_arrive_datetime'],
+                        'order_complete_time': upcoming['client_arrive_datetime'],
                     }
 
         self.calculation_repository.save_data(partner_id, order_to_courier, orders_ids, couriers_ids)
@@ -96,22 +124,25 @@ class PickService:
         order_obj.put_pick_history(courier_obj.courier_id, courier_obj.client_arrive_datetime)
 
     @staticmethod
-    def _calculate_arrive_time(couriers, distance):
+    def _calculate_arrive_time(couriers, distance, date_time):
         from service import courier
         for courier_obj in couriers:
 
-            t = courier_obj.restaurant_arrive_datetime.time()
+            if courier_obj.restaurant_arrive_datetime > date_time:
+                date_time = courier_obj.restaurant_arrive_datetime
+
+            t = date_time.time()
             time_seconds = t.hour * 60 * 60 + t.minute * 60 + t.second
 
             speed = courier.estimate_courier_speed(
                 courier_obj.partner_id,
                 courier_obj.courier_id,
                 time_seconds,
-                courier_obj.restaurant_arrive_datetime.weekday()
+                date_time.weekday()
             )
             client_arrive_time_second = distance / speed * 60 * 60
             courier_obj.client_arrive_time_second = time_seconds + client_arrive_time_second
-            courier_obj.client_arrive_datetime = courier_obj.restaurant_arrive_datetime + timedelta(seconds=client_arrive_time_second)
+            courier_obj.client_arrive_datetime = date_time + timedelta(seconds=client_arrive_time_second)
 
         return couriers
 
@@ -216,84 +247,3 @@ class PickService:
                 courier_obj.restaurant_arrive_time_second = estimated_second
                 courier_obj.restaurant_arrive_datetime = date_time + timedelta(seconds=estimated_second)
         return couriers
-
-    def get_state(self):
-        return AnyResult([])
-
-    # def get_state(self):
-    #     # todo: move out
-    #     orders = copy.deepcopy(self.orders)
-    #     orders = sorted(orders, key=lambda ff: ff['estimated_cooked_datetime'])
-    #     for order_copy in orders:
-    #         order = self.__get_order_by_id(order_copy['order_id'])
-    #         if order['courier_id'] != 0:
-    #             continue
-    #         courier = self.get_courier_for_order(order['order_id'])
-    #         self.__set_courier_for_order(courier, order)
-    #
-    #     data = list()
-    #     for courier_id in self.couriers:
-    #         row = self.couriers[courier_id]
-    #         if row['status'] == "away":
-    #             continue
-    #         tooltip = 'Courier: %s<br>\nlat: %s, lng: %s,<br>\nStatus: "%s"<br>\nOrderID: %s' % (str(row['courier_id']), str(row['lat']), str(row['lng']), str(row['status']), str(row['order_id']))
-    #         key = '%s-%s-%s' % (str(row['lat']), str(row['lng']), str(row['status']))
-    #         id = 'c-%s' % (str(courier_id))
-    #         if row['status'] == "busy":
-    #             tooltip = 'Complete: %s<br>\n' % str(row['estimated_complete_datetime']) + tooltip
-    #         data.append((
-    #             float(row['lat']),
-    #             float(row['lng']),
-    #             tooltip,
-    #             row['status'],
-    #             id,
-    #             key,
-    #         ))
-    #     restaurants = {}
-    #     for order_id, row in enumerate(self.orders):
-    #         if row['status'] == "Done":
-    #             continue
-    #         if not (row['restaurant_id'] in restaurants):
-    #             restaurants[row['restaurant_id']] = {
-    #                 'restaurant_id': row['restaurant_id'],
-    #                 'orders_count': 0,
-    #                 'orders_have_courier': 0,
-    #                 'lat': row['lat_restaurant'],
-    #                 'lng': row['lng_restaurant'],
-    #             }
-    #         restaurants[row['restaurant_id']]['orders_count'] += 1
-    #         status = "customer_wait"
-    #         if row['courier_id'] != 0:
-    #             status = "customer_busy"
-    #             restaurants[row['restaurant_id']]['orders_have_courier'] += 1
-    #
-    #         tooltip = 'Client: %s<br>\n' % str(" ") \
-    #                   + 'Date Time: %s<br>\n' % str(row['start_datetime']) \
-    #                   + 'Estimated Date Time: %s<br>\n' % str(row['estimated_cooked_datetime']) \
-    #                   + 'lat: %s, lng: %s<br>' % (str(row['lat_client']), str(row['lng_client'])) \
-    #                   + '\nOrderID: %s<br>' % str(order_id) \
-    #                   + '\nCourier: %s' % str(row['courier_id'])
-    #         key = '%s-%s-%s' % (str(row['lat_client']), str(row['lng_client']), status)
-    #         id = 'o-%s' % str(order_id)
-    #         data.append((
-    #             float(row['lat_client']),
-    #             float(row['lng_client']),
-    #             tooltip,
-    #             status,
-    #             id,
-    #             key,
-    #         ))
-    #     for restaurant_id in restaurants:
-    #         row = restaurants[restaurant_id]
-    #         tooltip = 'Restaurant: %s<br>\n %s / %s' % (str(restaurant_id), str(row['orders_have_courier']), str(row['orders_count']))
-    #         key = tooltip
-    #         id = 'r-%s' % str(restaurant_id)
-    #         data.append((
-    #             float(row['lat']),
-    #             float(row['lng']),
-    #             tooltip,
-    #             "restaurant",
-    #             id,
-    #             key,
-    #         ))
-    #     return AnyResult(data)

@@ -5,6 +5,13 @@ class CalculationRepository:
     def __init__(self):
         pass
 
+    def get(self, partner_id):
+        try:
+            calculation_obj = Calculation.objects.get(partner_id=partner_id)
+        except Calculation.DoesNotExist:
+            calculation_obj = Calculation()
+        return calculation_obj
+
     def save_data(self, partner_id, order_to_courier, orders_ids, couriers_ids):
         try:
             calculation_obj = Calculation.objects.get(partner_id=partner_id)
