@@ -1,7 +1,7 @@
 import bottle
 
 import route
-
+from config import config_app
 from scheduling import schedule
 
 
@@ -26,6 +26,6 @@ def add_cors_headers():
 if __name__ == '__main__':
     schedule()
     app = bottle.app()
-    app.run(host='0.0.0.0', port=3000)
+    app.run(host=config_app.host, port=config_app.port, prefix=config_app.prefix)
     route.start()
 
