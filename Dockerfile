@@ -1,10 +1,10 @@
 FROM python:2-onbuild
 
-EXPOSE 3000
-
 RUN mkdir /pick
 
 WORKDIR /pick
+
+VOLUME ["/pick/data", "/pick/model"]
 
 COPY requirements.txt requirements.txt
 

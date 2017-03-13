@@ -4,18 +4,25 @@ import route
 from config import config_app
 from scheduling import schedule
 
+app = bottle.Bottle()
+
+
+@app.route('/', method='GET')
+def root_response():
+    return bottle.HTTPResponse(status=200)
+
 
 @bottle.route('/<:re:.*>', method='OPTIONS')
-def enable_cors_generic_route():
-    add_cors_headers()
+def enable_cross_generic_route():
+    add_cross_headers()
 
 
 @bottle.hook('after_request')
-def enable_cors_after_request_hook():
-    add_cors_headers()
+def enable_cross_after_request_hook():
+    add_cross_headers()
 
 
-def add_cors_headers():
+def add_cross_headers():
     bottle.response.headers['Access-Control-Allow-Origin'] = '*'
     bottle.response.headers['Access-Control-Allow-Methods'] = \
         'GET, POST, PUT, OPTIONS'
@@ -25,7 +32,7 @@ def add_cors_headers():
 
 if __name__ == '__main__':
     schedule()
-    app = bottle.app()
-    app.run(host=config_app.host, port=config_app.port, prefix=config_app.prefix)
+    from api import api
+    app.mount(config_app.prefix, api)
+    app.run(host=config_app.host, port=config_app.port)
     route.start()
-
