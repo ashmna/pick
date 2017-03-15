@@ -24,7 +24,7 @@ class ConfigMongoDB():
         print 'MONGODB_HOST %s' % str(self.host)
         print 'MONGODB_PORT %s' % str(self.port)
         print 'MONGODB_USERNAME %s' % str(self.username)
-        print 'MONGODB_PASSWORD%s' % str(self.password)
+        print 'MONGODB_PASSWORD %s' % str(self.password)
 
 
 class ConfigApp():
@@ -34,13 +34,13 @@ class ConfigApp():
 
     def __init__(self):
         if 'APP_HOST' in os.environ:
-            self.name = os.environ['APP_HOST']
+            self.host = os.environ['APP_HOST']
         if 'APP_PORT' in os.environ:
-            self.host = os.environ['APP_PORT']
+            self.port = os.environ['APP_PORT']
         if 'APP_PREFIX' in os.environ:
             self.prefix = os.environ['APP_PREFIX']
-        print 'APP_HOST %s' % str(self.name)
-        print 'APP_PORT %s' % str(self.host)
+        print 'APP_HOST %s' % str(self.host)
+        print 'APP_PORT %s' % str(self.port)
         print 'APP_PREFIX %s' % str(self.prefix)
 
 
