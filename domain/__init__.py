@@ -7,7 +7,8 @@ from order import Order
 from token import Token
 
 connect(
-    config_mongodb.name,
+    db=config_mongodb.name,
+    alias='default',
     host=config_mongodb.host,
     port=config_mongodb.port,
     username=config_mongodb.username,
