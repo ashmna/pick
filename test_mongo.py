@@ -20,3 +20,7 @@ test.data = {'some': 'test data'}
 test.save()
 
 print 'ok'
+
+
+
+
