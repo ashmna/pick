@@ -13,7 +13,7 @@ def root_response():
 
 
 @app.route('/test', method='GET')
-def root_response():
+def test_response():
     return bottle.HTTPResponse(status=200, body='test')
 #
 #
