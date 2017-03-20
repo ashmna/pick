@@ -1,5 +1,4 @@
 import os.path
-from math import radians, cos, sin, asin, sqrt
 
 import numpy as np
 import pandas
@@ -7,6 +6,7 @@ from sklearn import neighbors
 from sklearn.externals import joblib
 
 from data_result import AnyResult, DataResult
+from util import haversine
 
 
 class Courier:
@@ -61,7 +61,7 @@ class Courier:
 
         distances = list()
         for index, row in courier_merge_data.iterrows():
-            distance = self.haversine(
+            distance = haversine(
                 row['lng_restaurant'],
                 row['lat_restaurant'],
                 row['lng_client'],
@@ -75,15 +75,6 @@ class Courier:
 
         courier_merge_data.to_csv(courier_merge_data_file_path)
         return courier_merge_data
-
-    def haversine(self, lon1, lat1, lon2, lat2):
-        lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
-        dlon = lon2 - lon1
-        dlat = lat2 - lat1
-        a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
-        c = 2 * asin(sqrt(a))
-        km = 6367 * c
-        return km
 
     def generate_couriers_speed_data(self):
         result = list()
