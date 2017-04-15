@@ -33,6 +33,14 @@ def add_cross_headers():
 if __name__ == '__main__':
     schedule()
     from api import api
+
+    @api.route('/<:re:.*>', method='OPTIONS')
+    def enable_cross_generic_route():
+        add_cross_headers()
+
+    @api.hook('after_request')
+    def enable_cross_after_request_hook():
+        add_cross_headers()
     app.mount(config_app.prefix, api)
     app.run(host=config_app.host, port=config_app.port)
     route.start()

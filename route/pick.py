@@ -38,7 +38,7 @@ def courier_complete_order(courier_id):
     return pick_service.courier_complete_order(partner_id, courier_id).to_json()
 
 
-@api.route('/pick/order/add/<order_id:float>', method='POST')
+@api.route('/pick/order/<order_id:float>', method='PUT')
 def add_order(order_id):
     partner_id = token_service.get_partner_id(request)
     data = json.load(request.body)
