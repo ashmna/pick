@@ -5,6 +5,7 @@ from config import config_mongodb
 from courier import Courier
 from order import Order
 from token import Token
+from couriers_orders import CouriersOrders
 
 connect(
     db=config_mongodb.name,

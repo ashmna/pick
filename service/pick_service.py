@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 from data_result import AnyResult
 from util import haversine, filter_list
+from domain import CouriersOrders
 
 
 class PickService:
@@ -32,11 +33,8 @@ class PickService:
         if len(courier_obj.upcoming_orders):
             for upcoming_order_info in courier_obj.upcoming_orders:
                 upcoming_order = self.order_repository.get_by_id(partner_id, upcoming_order_info['order_id'])
-                upcoming_orders.append(upcoming_order)
-        return AnyResult({
-            'current_order': order_obj,
-            'upcoming_orders': upcoming_orders,
-        })
+                upcoming_orders.append(upcoming_order.to_dict())
+        return CouriersOrders(order_obj, upcoming_orders)
 
     # def courier_busy(self, courier_id, order_id):
     #     courier_obj = self.courier_repository.get_by_id(courier_id)

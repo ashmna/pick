@@ -42,9 +42,9 @@ class Order(Document):
         self.lng_client = float(data['lng_client'])
 
         # for ui
-        self.order_address = str(data['order_address'])
-        self.order_item_info = str(data['order_item_info'])
-        self.restaurant_info = str(data['restaurant_info'])
+        self.order_address = data['order_address']
+        self.order_item_info = data['order_item_info']
+        self.restaurant_info = data['restaurant_info']
 
         self.distance = haversine(
             self.lng_restaurant,
@@ -116,3 +116,25 @@ class Order(Document):
             'courier_id': courier_id,
             'client_arrive_datetime': client_arrive_datetime,
         })
+
+    def to_dict(self):
+        return {
+            'partner_id': self.partner_id,
+            'order_id': self.order_id,
+            'status': self.status,
+            'start_datetime': str(self.start_datetime),
+            'estimated_cooked_datetime': str(self.estimated_cooked_datetime),
+            'estimated_complete_datetime': str(self.estimated_complete_datetime),
+            'lat_restaurant': self.lat_restaurant,
+            'lng_restaurant': self.lng_restaurant,
+            'lat_client': self.lat_client,
+            'lng_client': self.lng_client,
+            'distance': self.distance,
+            'courier_id': self.courier_id,
+            'is_courier_picked_manual': self.is_courier_picked_manual,
+            'restaurant_id': self.restaurant_id,
+            'items': self.items,
+            'complete_datetime': str(self.complete_datetime),
+            'order_address': self.order_address,
+            'order_item_info': self.order_item_info,
+        }

@@ -28,6 +28,7 @@ def get_couriers_orders(courier_id):
     partner_id = token_service.get_partner_id(request)
     return pick_service.get_couriers_orders(partner_id, courier_id).to_json()
 
+
 @api.route('/pick/courier/move/<courier_id:float>', method='GET')
 def courier_move(courier_id):
     partner_id = token_service.get_partner_id(request)
