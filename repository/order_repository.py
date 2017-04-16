@@ -9,6 +9,9 @@ class OrderRepository:
     def get_by_id(self, partner_id, order_id):
         return Order.objects.get(partner_id=partner_id, order_id=order_id)
 
+    def get_order_list(self, partner_id, skip, limit):
+        return Order.objects(partner_id=partner_id)
+
     def create_new_order(self, partner_id, order_id, data):
         order_obj = Order()
         order_obj.start(partner_id, order_id, datetime.now(), data)

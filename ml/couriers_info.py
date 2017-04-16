@@ -13,7 +13,7 @@ def some(x, n):
 
 data = pandas.read_csv("../data/courier-merge-data.csv")
 data = data[data['km_h'] > 0]
-data = data[data['km_h'] < 50]
+data = data[data['km_h'] < 150]
 # corr = data.corr()
 #
 # mask = np.zeros_like(corr, dtype=np.bool)
@@ -38,14 +38,21 @@ week_day_5 = (data[data['week_day'] == 5]).sample(n=5000).reset_index(drop=True)
 week_day_6 = (data[data['week_day'] == 6]).sample(n=5000).reset_index(drop=True)
 
 
-sns.residplot(week_day_0['time'], week_day_0['km_h'], lowess=True, color="g")
-sns.residplot(week_day_1['time'], week_day_1['km_h'], lowess=True, color="r")
-sns.residplot(week_day_2['time'], week_day_2['km_h'], lowess=True, color="b")
-sns.residplot(week_day_3['time'], week_day_3['km_h'], lowess=True, color="c")
-sns.residplot(week_day_4['time'], week_day_4['km_h'], lowess=True, color="m")
-sns.residplot(week_day_5['time'], week_day_5['km_h'], lowess=True, color="g")
-sns.residplot(week_day_6['time'], week_day_6['km_h'], lowess=True, color="g")
-
+# sns.residplot(week_day_0['time'], week_day_0['km_h'], lowess=True, color="k")
+# sns.residplot(week_day_1['time'], week_day_1['km_h'], lowess=True, color="g")
+# sns.residplot(week_day_2['time'], week_day_2['km_h'], lowess=True, color="r")
+# sns.residplot(week_day_3['time'], week_day_3['km_h'], lowess=True, color="c")
+# sns.residplot(week_day_4['time'], week_day_4['km_h'], lowess=True, color="m")
+# sns.residplot(week_day_5['time'], week_day_5['km_h'], lowess=True, color="y")
+sns.residplot(week_day_6['time'], week_day_6['km_h'], lowess=True, color="b")
+# b: blue
+# g: green
+# r: red
+# c: cyan
+# m: magenta
+# y: yellow
+# k: black
+# w: white
 
 # sns.distplot(week_day_0)
 

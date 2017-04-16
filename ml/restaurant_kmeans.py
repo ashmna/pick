@@ -31,14 +31,13 @@ y_pred = kMeans.predict(X)
 
 
 
-from sklearn.externals import joblib
-joblib.dump(kMeans, 'model/3-means.pkl')
+# from sklearn.externals import joblib
+# joblib.dump(kMeans, 'model/3-means.pkl')
 
-# plt.figure(1)
-# plt.clf()
-#
-# plt.scatter(X[:, 0], X[:, 1], c=y_pred)
-# plt.title("Unevenly Sized Blobs")
-#
-# plt.show()
-#
+plt.figure(1)
+plt.clf()
+
+plt.scatter(X[:, 0], X[:, 1], c=y_pred)
+plt.title("Time Spent In Restaurant")
+
+plt.show()

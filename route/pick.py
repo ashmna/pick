@@ -43,6 +43,20 @@ def courier_complete_order(courier_id):
     return pick_service.courier_complete_order(partner_id, courier_id).to_json()
 
 
+@api.route('/pick/order', method='GET')
+def get_order_list():
+    partner_id = token_service.get_partner_id(request)
+    limit = request.query['limit']
+    skip = request.query['skip']
+    return pick_service.get_order_list(partner_id, skip, limit).to_json()
+
+
+@api.route('/pick/order/<order_id:float>', method='GET')
+def get_order_list(order_id):
+    partner_id = token_service.get_partner_id(request)
+    return pick_service.get_order(partner_id, order_id).to_json()
+
+
 @api.route('/pick/order/<order_id:float>', method='POST')
 def add_order(order_id):
     partner_id = token_service.get_partner_id(request)

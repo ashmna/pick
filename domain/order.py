@@ -116,6 +116,8 @@ class Order(Document):
             'courier_id': courier_id,
             'client_arrive_datetime': client_arrive_datetime,
         })
+        self.courier_id = courier_id
+        self.estimated_complete_datetime = client_arrive_datetime
 
     def to_dict(self):
         return {

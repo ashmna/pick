@@ -53,6 +53,12 @@ class PickService:
             order_obj.done_order(courier_obj)
         return courier_obj
 
+    def get_order(self, partner_id, order_id):
+        return self.order_repository.get_by_id(partner_id, order_id)
+
+    def get_order_list(self, partner_id, skip, limit):
+        return self.order_repository.get_order_list(partner_id, skip, limit)
+
     def add_order(self, partner_id, order_id, order_data):
         order_obj = self.order_repository.create_new_order(partner_id, order_id, order_data)
         return order_obj
