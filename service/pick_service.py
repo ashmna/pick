@@ -21,6 +21,23 @@ class PickService:
         courier_obj.disable()
         return courier_obj
 
+    def get_couriers_orders(self, partner_id, courier_id):
+        upcoming_orders = list()
+        order_obj = None
+        courier_obj = self.courier_repository.get_by_id(partner_id, courier_id)
+
+        if courier_obj.order_id:
+            order_obj = self.order_repository.get_by_id(partner_id, courier_obj.order_id)
+
+        if len(courier_obj.upcoming_orders):
+            for upcoming_order_info in courier_obj.upcoming_orders:
+                upcoming_order = self.order_repository.get_by_id(partner_id, upcoming_order_info['order_id'])
+                upcoming_orders.append(upcoming_order)
+        return AnyResult({
+            'current_order': order_obj,
+            'upcoming_orders': upcoming_orders,
+        })
+
     # def courier_busy(self, courier_id, order_id):
     #     courier_obj = self.courier_repository.get_by_id(courier_id)
     #     courier_obj.busy(order_id)
@@ -40,6 +57,10 @@ class PickService:
 
     def add_order(self, partner_id, order_id, order_data):
         order_obj = self.order_repository.create_new_order(partner_id, order_id, order_data)
+        return order_obj
+
+    def update_order(self, partner_id, order_id, order_data):
+        order_obj = self.order_repository.update_order(partner_id, order_id, order_data)
         return order_obj
 
     def get_courier_for_order(self, partner_id, order_id):

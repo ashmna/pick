@@ -23,6 +23,10 @@ def courier_disable(courier_id):
 #     partner_id = token_service.get_partner_id(request)
 #     return pick_service.courier_busy(partner_id, courier_id).to_json()
 
+@api.route('/pick/courier/orders/<courier_id:float>', method='GET')
+def get_couriers_orders(courier_id):
+    partner_id = token_service.get_partner_id(request)
+    return pick_service.get_couriers_orders(partner_id, courier_id).to_json()
 
 @api.route('/pick/courier/move/<courier_id:float>', method='GET')
 def courier_move(courier_id):
@@ -38,11 +42,18 @@ def courier_complete_order(courier_id):
     return pick_service.courier_complete_order(partner_id, courier_id).to_json()
 
 
-@api.route('/pick/order/<order_id:float>', method='PUT')
+@api.route('/pick/order/<order_id:float>', method='POST')
 def add_order(order_id):
     partner_id = token_service.get_partner_id(request)
     data = json.load(request.body)
     return pick_service.add_order(partner_id, order_id, data['order']).to_json()
+
+
+@api.route('/pick/order/<order_id:float>', method='PUT')
+def update_order(order_id):
+    partner_id = token_service.get_partner_id(request)
+    data = json.load(request.body)
+    return pick_service.update_order(partner_id, order_id, data).to_json()
 
 
 @api.route('/pick/order/courier/<order_id:float>', method='GET')

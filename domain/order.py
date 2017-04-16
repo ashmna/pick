@@ -18,10 +18,14 @@ class Order(Document):
     lng_client = FloatField()
     distance = FloatField()
     courier_id = LongField()
+    is_courier_picked_manual = BooleanField()
     restaurant_id = LongField()
     items = ListField()  # {id, count}
     complete_datetime = DateTimeField()
     pick_history = ListField()
+    order_address = StringField()
+    order_item_info = StringField()
+    restaurant_info = StringField()
 
     def start(self, partner_id, order_id, date_time, data):
         # self.order_id = int((date_time - datetime(1970, 1, 1)).total_seconds())
@@ -29,12 +33,18 @@ class Order(Document):
         self.partner_id = partner_id
         self.status = "todo"
         self.courier_id = 0
+        self.is_courier_picked_manual = False
         self.start_datetime = date_time
 
         self.lat_restaurant = float(data['lat_restaurant'])
         self.lng_restaurant = float(data['lng_restaurant'])
         self.lat_client = float(data['lat_client'])
         self.lng_client = float(data['lng_client'])
+
+        # for ui
+        self.order_address = str(data['order_address'])
+        self.order_item_info = str(data['order_item_info'])
+        self.restaurant_info = str(data['restaurant_info'])
 
         self.distance = haversine(
             self.lng_restaurant,
