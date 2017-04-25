@@ -139,7 +139,7 @@ class Courier:
         data = data[data['distance'] >= distance]
         data = data[data['distance'] < (distance + 0.1)]
         return {
-            "mean" : data['time_in_route'].mean(),
+            "mean": data['time_in_route'].mean(),
             "count": len(data),
             "distance": distance,
         }
