@@ -12,7 +12,7 @@ rng = np.random.RandomState(31337)
 def to_nested_list(arr, rate, week_day):
     tmp_data = []
     for item in arr:
-        r = [item, rate, 0, 0, 0, 0, 0, 0, 0]
+        r = [item, rate / 10.0, 0, 0, 0, 0, 0, 0, 0]
         r[week_day + 2] = 1
         tmp_data.append(r)
     return np.array(tmp_data)
@@ -40,7 +40,7 @@ for index, row in data.iterrows():
     courier_rate = 0.9
     if row['courier'] == 1085:
         courier_rate = 1.0
-    r = [row['time'], courier_rate, 0, 0, 0, 0, 0, 0, 0]
+    r = [row['time'], courier_rate / 10.0, 0, 0, 0, 0, 0, 0, 0]
     r[row['week_day'] + 2] = 1
     X_list.append(r)
 X = np.array(X_list)
@@ -65,7 +65,7 @@ y = np.array(data['km_h'].as_matrix())
 # reg.fit(X, y)
 xgb_model = XGBRegressor(
     max_depth=7,
-    n_estimators=len(X)/(24 * 10)
+    n_estimators=250
 )
 xgb_model.fit(X, y)
 #
