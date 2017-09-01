@@ -1,8 +1,23 @@
+import os
+import time
 from datetime import datetime, timedelta
 
 from data_result import AnyResult
-from util import haversine, filter_list
 from domain import CouriersOrders
+from util import haversine, filter_list
+
+simulation_start_time = float(os.getenv('SIMULATION_START_TIME', 0.0))
+
+
+def get_current_time():
+    simulation = bool(os.getenv('SIMULATION', False))
+    if simulation:
+        if simulation_start_time <= 0:
+            simulation_start_time = time.time()
+        delta = time.time() - simulation_start_time
+        current_timestamp = simulation_start_time + delta * 60 * 4
+        return datetime.fromtimestamp(current_timestamp)
+    return datetime.now()
 
 
 class PickService:
@@ -75,7 +90,7 @@ class PickService:
         return AnyResult({})
 
     def set_courier_for_order(self, partner_id, order_id, courier_id):
-        now = datetime.now()
+        now = get_current_time()
         order_obj = self.order_repository.get_by_id(partner_id, order_id)
         courier_obj = self.courier_repository.get_by_id(partner_id, courier_id)
 
@@ -98,7 +113,7 @@ class PickService:
     def calculate(self, partner_id):
         orders = self.order_repository.get_orders_need_to_pick(partner_id)
         all_couriers = self.courier_repository.get_couriers(partner_id)
-        now = datetime.now()
+        now = get_current_time()
         t = now.time()
         now_time_seconds = t.hour * 60 * 60 + t.minute * 60 + t.second
         order_to_courier = {}
